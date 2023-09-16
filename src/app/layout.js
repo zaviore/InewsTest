@@ -8,10 +8,6 @@ import { usePathname } from "next/navigation";
 import { client } from "@/config/api";
 import { gql } from "graphql-request";
 
-export const metadata = {
-  title: "myblog",
-  description: "testing create blog inews",
-};
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import NavbarComponent from "@/component/navbar";
 
@@ -23,7 +19,7 @@ const Update_view = gql`
   }
 `;
 
-export const query = gql`
+const query = gql`
   query MyQuery($slug: String!) {
     post(where: { slug: $slug }) {
       id
@@ -62,7 +58,10 @@ export function ThemeRegistry(props) {
 
 export default function RootLayout(props) {
   const { children } = props;
-
+  const metadata = {
+    title: "myblog",
+    description: "testing create blog inews",
+  };
   return (
     <html lang='en'>
       <head>
