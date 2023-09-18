@@ -6,8 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Box, Input } from "@mui/material";
-import { useSearchParams } from "next/navigation";
+import { Box } from "@mui/material";
 import { usePathname } from "next/navigation";
 
 import { useRouter } from "next/navigation";
@@ -16,7 +15,6 @@ function NavbarComponent(props) {
   const pathname = usePathname();
   const blog = pathname.includes("/blog");
 
-  console.log(blog, pathname);
   const [search, setSearch] = React.useState("");
 
   const handleChangeSearch = (event) => {
@@ -25,7 +23,6 @@ function NavbarComponent(props) {
 
   const handleSubmitSearch = (event) => {
     if (event.key === "Enter") {
-      //   params.set();
       router.push(`?search=${search}`);
     }
   };
