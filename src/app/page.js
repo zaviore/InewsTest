@@ -34,7 +34,6 @@ export async function generateStaticParams() {
 }
 
 async function getAPIData({ params }) {
-  console.log(params);
   const searchParams = params || "";
   const [postblog, topFive] = await Promise.all([
     client.request(query_post, { search: searchParams || "" }),
