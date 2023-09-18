@@ -19,9 +19,9 @@ function content(props) {
       </Typography>
       <hr />
       {postblog.posts.map((key, idx) => {
-        console.log(key);
+        const keys = key.title.toLowerCase();
         if (search) {
-          if (key.title.includes(search))
+          if (keys.includes(search.toLowerCase()))
             return <ComponentPost data={key} key={idx} />;
         } else {
           return <ComponentPost data={key} key={idx} />;

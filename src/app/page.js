@@ -1,21 +1,17 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Container from "@mui/material/Container";
 import { client } from "@/config/api";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import Link from "next/link";
-import Image from "next/image";
+import { Grid } from "@mui/material";
+
 import { query_post, top_query, queryStatic } from "./query";
 // export const dynamic = "force-dynamic";
 import Content from "./content";
-import SearchBar from "./search/page";
 import TopView from "./top-view";
-function SearchBarFallback() {
-  return <>placeholder</>;
-}
+
 export default async function Page({ searchParams }) {
   // console.log(searchParams);
   const { props } = await getAPIData(searchParams);
-  // console.log(props.postblog, "berubah ga");
+
   return (
     <Container maxWidth={"xl"}>
       <Grid container>
