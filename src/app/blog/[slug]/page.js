@@ -47,7 +47,7 @@ export default async function Page({ params }) {
         </Box>
 
         <Typography variant='caption' align='center'>
-          {projects.content.text.split(" \n ").join("\n")}
+          {projects.content.text.replace(/\\n/g, "\n")}
         </Typography>
       </Box>
     </Container>
