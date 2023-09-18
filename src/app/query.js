@@ -56,12 +56,20 @@ export const query_detail_post = gql`
       stage
       slug
       view
+      updatedAt
       coverImage {
         altText
         url
       }
       content {
         text
+      }
+      author {
+        id
+        name
+        picture {
+          url
+        }
       }
     }
   }

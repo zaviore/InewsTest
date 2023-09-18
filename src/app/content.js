@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
+import moment from "moment/moment";
 function SearchBarFallback() {
   return <>placeholder</>;
 }
@@ -34,8 +35,8 @@ function content(props) {
 export default content;
 
 const ComponentPost = ({ data }) => {
-  const { title, excerpt, slug, coverImage, author } = data;
-
+  const { title, excerpt, slug, coverImage, author, updatedAt } = data;
+  console.log(data, "ini");
   return (
     <Box sx={{ margin: "15px", borderRadius: "10px" }}>
       <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -79,7 +80,12 @@ const ComponentPost = ({ data }) => {
               />
             </Box>
             <Box>
-              <Typography variant='contained'>{author.name}</Typography>
+              <Typography variant='contained'>{author.name}</Typography> |
+            </Box>
+            <Box mx={1}>
+              <Typography color={"red"}>
+                {moment(updatedAt).format("DD MMMM YYYY")}
+              </Typography>
             </Box>
           </Box>
         </Box>

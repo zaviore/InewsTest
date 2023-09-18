@@ -63,11 +63,7 @@ export default function RootLayout(props) {
     <html lang='en'>
       <head>
         <title>Home Page</title>
-        <meta
-          title={metadata.title}
-          name={metadata.title}
-          content={metadata.description}
-        />
+        <meta name={metadata.title} content={metadata.description} />
       </head>
       <body>
         <ThemeRegistry options={{ key: "mui" }}>
