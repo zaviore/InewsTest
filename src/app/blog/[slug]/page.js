@@ -8,6 +8,12 @@ export const revalidate = 2;
 
 export default async function Page({ params }) {
   const projects = await getPosts(params);
+  const jumlahBarisBaru = (teksDenganNewline.match(/\n/g) || []).length;
+
+  // Membuat karakter baris baru sesuai dengan jumlah \n
+  const karakterBarisBaru = "\n".repeat(jumlahBarisBaru);
+
+  // Menggantikan semua \n dengan karakter baris baru sesuai jumlah
 
   return (
     <Container maxWidth='md'>
