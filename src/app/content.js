@@ -36,7 +36,7 @@ export default content;
 
 const ComponentPost = ({ data }) => {
   const { title, excerpt, slug, coverImage, author, updatedAt } = data;
-  console.log(data, "ini");
+
   return (
     <Box sx={{ margin: "15px", borderRadius: "10px" }}>
       <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>

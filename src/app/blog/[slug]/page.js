@@ -2,18 +2,12 @@ import { client } from "@/config/api";
 import React from "react";
 import Image from "next/image";
 import { Box, Container, Typography } from "@mui/material";
-import { queryStatic, query_detail_post, Update_view } from "@/app/query";
+import { query_detail_post } from "@/app/query";
 import moment from "moment/moment";
 export const revalidate = 2;
 
 export default async function Page({ params }) {
   const projects = await getPosts(params);
-  const jumlahBarisBaru = (teksDenganNewline.match(/\n/g) || []).length;
-
-  // Membuat karakter baris baru sesuai dengan jumlah \n
-  const karakterBarisBaru = "\n".repeat(jumlahBarisBaru);
-
-  // Menggantikan semua \n dengan karakter baris baru sesuai jumlah
 
   return (
     <Container maxWidth='md'>
